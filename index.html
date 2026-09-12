@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBDevs | AI · DevOps · Cloud · Web</title>
+<meta name="description" content="MBDevs: AI Agents, DevOps, Cloud, Web Technologies, LLM, RAG y Machine Learning.">
+<meta name="theme-color" content="#06090f">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--bg:#06090f;--card:#0e1520cc;--text:#f4f7fb;--soft:#9aa8b8;--muted:#69788a;--border:#ffffff14;--blue:#4cc9ff;--green:#65f5a5;--purple:#9d7cff;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,#4cc9ff17,transparent 28%),radial-gradient(circle at 88% 20%,#9d7cff14,transparent 26%),var(--bg);line-height:1.6}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:52px 52px}
+a{text-decoration:none;color:inherit}.container{width:min(92%,var(--max));margin:auto}
+header{position:sticky;top:0;z-index:20;background:#06090fc9;border-bottom:1px solid #ffffff0d;backdrop-filter:blur(16px)}
+.navbar{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.8rem;font-weight:800}.logo{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#65f5a526,#4cc9ff2e);border:1px solid var(--border)}.logo svg{width:27px}.brand-name{font-size:1.05rem}
+.navright,nav,.langs{display:flex;align-items:center;gap:1rem}nav a{font-size:.9rem;color:var(--soft)}nav a:hover{color:white}.contact{border:1px solid var(--border);padding:.55rem .9rem;border-radius:999px}
+.langs{padding:.3rem;border:1px solid var(--border);border-radius:999px;background:#ffffff08}.lang{border:0;background:transparent;color:var(--soft);cursor:pointer;border-radius:999px;padding:.42rem .65rem;font-weight:700}.lang.active{background:linear-gradient(135deg,var(--green),var(--blue));color:#07120f}
+.hero{min-height:calc(100vh - 74px);display:flex;align-items:center;padding:6rem 0}.hero-inner{max-width:1000px}.eyebrow{color:var(--green);font:700 .76rem ui-monospace,monospace;letter-spacing:.08em;margin-bottom:1.4rem}
+h1{font-size:clamp(3rem,8vw,6.4rem);line-height:.98;letter-spacing:-.065em}.grad{background:linear-gradient(90deg,#fff 5%,#9ddfff 45%,#8af4bd 95%);-webkit-background-clip:text;color:transparent}
+.lead{max-width:730px;color:var(--soft);font-size:clamp(1.05rem,2vw,1.28rem);margin-top:2rem}.lead strong{color:#dce8f5}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}.btn{padding:.8rem 1.3rem;border-radius:999px;font-weight:750;display:inline-flex}.primary{background:linear-gradient(135deg,var(--green),#8cf2cf);color:#04100d}.secondary{border:1px solid var(--border);background:#ffffff08}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:3rem}.tags span{font:.72rem ui-monospace,monospace;color:#8090a2;border:1px solid var(--border);border-radius:999px;padding:.4rem .7rem}
+section{padding:6.5rem 0}.label{font:700 .76rem ui-monospace,monospace;color:var(--blue);letter-spacing:.08em;margin-bottom:.7rem}h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08;letter-spacing:-.045em}.intro{color:var(--soft);margin-top:1rem;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}.card{padding:1.5rem;border:1px solid var(--border);border-radius:18px;background:linear-gradient(145deg,#ffffff09,#ffffff03),var(--card);transition:.25s}.card:hover{transform:translateY(-4px);border-color:#4cc9ff4d}.num{font:.72rem ui-monospace,monospace;color:var(--muted);display:block;margin-bottom:1.6rem}.card h3{margin-bottom:.65rem}.card p{color:var(--soft);font-size:.92rem}
+.approach{display:grid;grid-template-columns:.85fr 1fr;gap:5rem;margin-top:6rem}.principles{display:grid;gap:1rem}.principle{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}.code{color:var(--green);font:.75rem ui-monospace,monospace}.principle p{color:var(--soft);font-size:.9rem}
+.ctabox{padding:clamp(2rem,6vw,5rem);border:1px solid #65f5a526;border-radius:30px;background:radial-gradient(circle at 85% 15%,#4cc9ff17,transparent 30%),#0a0f17e0}.ctabox p{max-width:650px;color:var(--soft);margin:1rem 0 2rem}
+footer{padding:2rem 0;border-top:1px solid var(--border)}.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.82rem}.footlinks{display:flex;gap:1rem}.footlinks a{color:var(--soft)}
+@media(max-width:900px){nav{display:none}.grid{grid-template-columns:1fr 1fr}.approach{grid-template-columns:1fr;gap:2rem}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.navbar{align-items:flex-start;padding:.8rem 0}.navright{margin-left:auto}.brand-name{display:none}.lang{padding:.38rem .5rem}}
+</style>
+</head>
+<body>
+<header><div class="container navbar">
+<a class="brand" href="#top">
+<span class="logo"><svg viewBox="0 0 64 64" fill="none"><path d="M32 8L48 17V35L32 44L16 35V17L32 8Z" stroke="url(#lg)" stroke-width="3"/><circle cx="32" cy="8" r="4" fill="#65F5A5"/><circle cx="48" cy="17" r="4" fill="#4CC9FF"/><circle cx="48" cy="35" r="4" fill="#9D7CFF"/><circle cx="32" cy="44" r="4" fill="#65F5A5"/><circle cx="16" cy="35" r="4" fill="#4CC9FF"/><circle cx="16" cy="17" r="4" fill="#9D7CFF"/><defs><linearGradient id="lg"><stop stop-color="#65F5A5"/><stop offset=".5" stop-color="#4CC9FF"/><stop offset="1" stop-color="#9D7CFF"/></linearGradient></defs></svg></span>
+<span class="brand-name">MBDevs</span></a>
+<div class="navright"><nav><a href="#expertise" data-i18n="nav1">Expertise</a><a href="#approach" data-i18n="nav2">Enfoque</a><a class="contact" href="#contact" data-i18n="nav3">Contacto</a></nav>
+<div class="langs"><button class="lang active" id="es">🇪🇸 ES</button><button class="lang" id="en">🇺🇸 EN</button></div></div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="container"><div class="hero-inner">
+<div class="eyebrow">AI · DEVOPS · CLOUD · ENGINEERING</div>
+<h1><span data-i18n="hero1">Ingeniería para</span> <span class="grad" data-i18n="hero2">sistemas inteligentes.</span></h1>
+<p class="lead" data-i18n-html="lead">Diseñamos y construimos soluciones modernas combinando <strong>software, inteligencia artificial, automatización e infraestructura cloud-native</strong>. De la arquitectura al entorno productivo.</p>
+<div class="actions"><a class="btn primary" href="mailto:contacto@mbdevs.com" data-i18n="cta1">Iniciar proyecto →</a><a class="btn secondary" href="#expertise" data-i18n="cta2">Ver expertise</a></div>
+<div class="tags"><span>AI Agents</span><span>LLM</span><span>RAG</span><span>Machine Learning</span><span>DevOps</span><span>Cloud Native</span><span>Containers</span><span>Web</span></div>
+</div></div></section>
+
+<section id="expertise"><div class="container">
+<div class="label">// EXPERTISE</div><h2><span data-i18n="s1">Tecnología que resuelve</span><br><span data-i18n="s2">problemas reales.</span></h2><p class="intro" data-i18n="intro">Arquitecturas simples donde deben ser simples, sofisticadas donde realmente generan valor.</p>
+<div class="grid">
+<article class="card"><span class="num">01</span><h3>Web Technologies</h3><p data-i18n="c1">Aplicaciones rápidas, APIs robustas y arquitecturas escalables preparadas para crecer sin comprometer performance ni mantenibilidad.</p></article>
+<article class="card"><span class="num">02</span><h3>AI Agents</h3><p data-i18n="c2">Agentes capaces de razonar, consultar sistemas, ejecutar herramientas y automatizar workflows complejos con control y trazabilidad.</p></article>
+<article class="card"><span class="num">03</span><h3>DevOps & Infrastructure</h3><p data-i18n="c3">CI/CD, containers, observabilidad y plataformas cloud-native para entregar software de forma confiable y repetible.</p></article>
+<article class="card"><span class="num">04</span><h3>LLM & RAG</h3><p data-i18n="c4">Integramos modelos de lenguaje con datos privados mediante búsqueda semántica y RAG.</p></article>
+<article class="card"><span class="num">05</span><h3>Machine Learning</h3><p data-i18n="c5">Desarrollo, evaluación y despliegue de modelos para predicción, clasificación, automatización y análisis.</p></article>
+<article class="card"><span class="num">06</span><h3>AI Engineering</h3><p data-i18n="c6">Convertimos prototipos de IA en sistemas reales: APIs, datos, modelos, observabilidad, seguridad y operación.</p></article>
+</div>
+
+<div class="approach" id="approach">
+<div><div class="label">// ENGINEERING MINDSET</div><h2 data-i18n="approach">Construido para producción.</h2></div>
+<div class="principles">
+<div class="principle"><span class="code">01</span><div><strong data-i18n="p1t">Arquitectura primero</strong><p data-i18n="p1">Diseñamos pensando en integración, escalabilidad y operación desde el comienzo.</p></div></div>
+<div class="principle"><span class="code">02</span><div><strong data-i18n="p2t">Automatizar inteligentemente</strong><p data-i18n="p2">Automatizamos donde reduce errores, tiempo operativo y complejidad.</p></div></div>
+<div class="principle"><span class="code">03</span><div><strong data-i18n="p3t">IA con contexto</strong><p data-i18n="p3">La IA genera valor cuando entiende los datos, las reglas y el contexto del negocio.</p></div></div>
+<div class="principle"><span class="code">04</span><div><strong data-i18n="p4t">Listo para producción</strong><p data-i18n="p4">Seguridad, observabilidad y confiabilidad forman parte del diseño.</p></div></div>
+</div></div></div></section>
+
+<section id="contact"><div class="container"><div class="ctabox"><div class="label">// LET'S BUILD</div><h2 data-i18n="ctat">De la idea a producción.</h2><p data-i18n="ctap">¿Necesitás integrar IA, automatizar infraestructura, construir una plataforma web o llevar un prototipo inteligente a producción? Podemos diseñarlo juntos.</p><a class="btn primary" href="mailto:contacto@mbdevs.com" data-i18n="ctab">Contactar MBDevs →</a></div></div></section>
+</main>
+
+<footer><div class="container foot"><span>© <span id="year"></span> MBDevs · Engineering intelligent systems.</span><span class="footlinks"><a href="mailto:contacto@mbdevs.com">Email</a><a href="#">LinkedIn</a><a href="#">GitHub</a></span></div></footer>
+
+<script>
+const t={es:{nav1:"Expertise",nav2:"Enfoque",nav3:"Contacto",hero1:"Ingeniería para",hero2:"sistemas inteligentes.",lead:'Diseñamos y construimos soluciones modernas combinando <strong>software, inteligencia artificial, automatización e infraestructura cloud-native</strong>. De la arquitectura al entorno productivo.',cta1:"Iniciar proyecto →",cta2:"Ver expertise",s1:"Tecnología que resuelve",s2:"problemas reales.",intro:"Arquitecturas simples donde deben ser simples, sofisticadas donde realmente generan valor.",c1:"Aplicaciones rápidas, APIs robustas y arquitecturas escalables preparadas para crecer sin comprometer performance ni mantenibilidad.",c2:"Agentes capaces de razonar, consultar sistemas, ejecutar herramientas y automatizar workflows complejos con control y trazabilidad.",c3:"CI/CD, containers, observabilidad y plataformas cloud-native para entregar software de forma confiable y repetible.",c4:"Integramos modelos de lenguaje con datos privados mediante búsqueda semántica y RAG.",c5:"Desarrollo, evaluación y despliegue de modelos para predicción, clasificación, automatización y análisis.",c6:"Convertimos prototipos de IA en sistemas reales: APIs, datos, modelos, observabilidad, seguridad y operación.",approach:"Construido para producción.",p1t:"Arquitectura primero",p1:"Diseñamos pensando en integración, escalabilidad y operación desde el comienzo.",p2t:"Automatizar inteligentemente",p2:"Automatizamos donde reduce errores, tiempo operativo y complejidad.",p3t:"IA con contexto",p3:"La IA genera valor cuando entiende los datos, las reglas y el contexto del negocio.",p4t:"Listo para producción",p4:"Seguridad, observabilidad y confiabilidad forman parte del diseño.",ctat:"De la idea a producción.",ctap:"¿Necesitás integrar IA, automatizar infraestructura, construir una plataforma web o llevar un prototipo inteligente a producción? Podemos diseñarlo juntos.",ctab:"Contactar MBDevs →"},
+en:{nav1:"Expertise",nav2:"Approach",nav3:"Contact",hero1:"Engineering",hero2:"intelligent systems.",lead:'We design and build modern solutions combining <strong>software, artificial intelligence, automation and cloud-native infrastructure</strong>. From architecture to production environments.',cta1:"Start a project →",cta2:"Explore expertise",s1:"Technology that solves",s2:"real problems.",intro:"Simple architectures where simplicity matters, sophisticated systems where they create real value.",c1:"Fast applications, robust APIs and scalable architectures built to grow without sacrificing performance or maintainability.",c2:"Agents capable of reasoning, consulting systems, using tools and automating complex workflows with control and traceability.",c3:"CI/CD, containers, observability and cloud-native platforms for reliable and repeatable software delivery.",c4:"We integrate language models with private data through semantic search and RAG.",c5:"Development, evaluation and deployment of models for prediction, classification, automation and analysis.",c6:"We turn AI prototypes into real systems: APIs, data, models, observability, security and operations.",approach:"Built for production.",p1t:"Architecture first",p1:"We design with integration, scalability and operations in mind from day one.",p2t:"Automate intelligently",p2:"We automate where it reduces errors, operational effort and complexity.",p3t:"AI with context",p3:"AI creates value when it understands business data, rules and context.",p4t:"Production ready",p4:"Security, observability and reliability are part of the design.",ctat:"From idea to production.",ctap:"Need to integrate AI, automate infrastructure, build a web platform or take an intelligent prototype into production? We can design it together.",ctab:"Contact MBDevs →"}};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll("[data-i18n]").forEach(e=>{let k=e.dataset.i18n;if(t[l][k])e.textContent=t[l][k]});document.querySelectorAll("[data-i18n-html]").forEach(e=>{let k=e.dataset.i18nHtml;if(t[l][k])e.innerHTML=t[l][k]});es.classList.toggle("active",l==="es");en.classList.toggle("active",l==="en");localStorage.setItem("mbdevs-lang",l)}
+es.onclick=()=>setLang("es");en.onclick=()=>setLang("en");document.getElementById("year").textContent=new Date().getFullYear();setLang(localStorage.getItem("mbdevs-lang")||"es");
+</script>
+</body>
+</html>
