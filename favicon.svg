@@ -1,22 +1,29 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#14181B"/>
+    <linearGradient id="bg" x1="7" y1="5" x2="57" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15191C"/>
       <stop offset="1" stop-color="#050706"/>
     </linearGradient>
-    <linearGradient id="green" x1="35" y1="14" x2="57" y2="50" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#B7FF72"/>
-      <stop offset="0.42" stop-color="#65F58C"/>
-      <stop offset="1" stop-color="#25C95E"/>
+    <linearGradient id="green" x1="35" y1="14" x2="56" y2="51" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20F0B6"/>
+      <stop offset="0.55" stop-color="#12DFA7"/>
+      <stop offset="1" stop-color="#08B989"/>
     </linearGradient>
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="1.7" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feComponentTransfer in="mono" result="grain"><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="grain" mode="multiply"/>
     </filter>
   </defs>
-  <rect x="1" y="1" width="62" height="62" rx="14" fill="url(#bg)" stroke="#28302B" stroke-width="2"/>
-  <path d="M12 46V18L25.5 31.5L33 24V46H27V33.5L25.5 35L18 27.5V46H12Z" fill="#F3F5F3"/>
-  <path d="M33 18H46.5C53.4 18 57 21.5 57 26.5C57 30.1 55.2 32.5 52.2 33.7C55.8 34.9 58 37.4 58 41.2C58 46.8 54.1 50 46.7 50H33V44H46.2C50 44 51.8 42.8 51.8 40.4C51.8 37.9 49.9 36.8 46.1 36.8H38.8V31H46C49.3 31 50.8 29.9 50.8 27.6C50.8 25.4 49.3 24 46 24H33V18Z" fill="url(#green)" filter="url(#glow)"/>
-  <path d="M33 19.2H46.2C51.6 19.2 54.8 21.7 55.5 25.4" stroke="#D7FFD8" stroke-opacity="0.22" stroke-width="1.1" stroke-linecap="round"/>
-  <path d="M12 48H58" stroke="#65F58C" stroke-opacity="0.16" stroke-width="1"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)" stroke="#16DFA8" stroke-opacity="0.62" stroke-width="2"/>
+  <path d="M11.5 46V18L25.5 31.8L32.5 24.6V46H26.2V34.2L25.4 35.1L17.8 27.7V46H11.5Z" fill="#F3F4F2" filter="url(#shadow)"/>
+  <path d="M32 17.5H46.4C53.3 17.5 57 21 57 26.1C57 29.4 55.5 31.8 52.5 33.3C56.1 34.6 58.2 37.3 58.2 41C58.2 46.9 54 50.5 46.6 50.5H32V44.2H46.1C49.9 44.2 51.8 42.9 51.8 40.4C51.8 37.9 49.8 36.7 46 36.7H38.2V31H46C49.1 31 50.8 29.8 50.8 27.5C50.8 25.2 49.1 23.9 45.8 23.9H32V17.5Z" fill="url(#green)" filter="url(#shadow)"/>
+  <path d="M4.5 12.5L10 7.5M51 57L58 50" stroke="#16DFA8" stroke-opacity="0.28" stroke-width="1.2" stroke-linecap="round"/>
+  <g opacity="0.18" filter="url(#rough)">
+    <rect x="4" y="4" width="56" height="56" rx="12" fill="#FFFFFF"/>
+  </g>
 </svg>
