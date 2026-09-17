@@ -1,3 +1,15 @@
+// Force the browser to use the current MBDevs favicon asset instead of the old embedded icon.
+(() => {
+  let icon = document.querySelector('link[rel="icon"]');
+  if (!icon) {
+    icon = document.createElement('link');
+    icon.rel = 'icon';
+    document.head.appendChild(icon);
+  }
+  icon.type = 'image/svg+xml';
+  icon.href = 'favicon.svg?v=3';
+})();
+
 const io = new IntersectionObserver(entries => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.08 });
