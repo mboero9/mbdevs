@@ -53,52 +53,32 @@ const original = {};
 document.querySelectorAll('[data-i18n]').forEach(el => original[el.dataset.i18n] = el.innerHTML);
 let lang = 'es';
 const toggle = document.getElementById('langToggle');
-toggle.addEventListener('click', () => {
-  lang = lang === 'es' ? 'en' : 'es';
-  document.documentElement.lang = lang;
-  toggle.textContent = lang === 'es' ? 'EN' : 'ES';
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    el.innerHTML = lang === 'en' ? (translations.en[key] || original[key]) : original[key];
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    lang = lang === 'es' ? 'en' : 'es';
+    document.documentElement.lang = lang;
+    toggle.textContent = lang === 'es' ? 'EN' : 'ES';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      el.innerHTML = lang === 'en' ? (translations.en[key] || original[key]) : original[key];
+    });
   });
-});
+}
 
-// MBDevs transparent brand + interactive 3D hover
-const brandStyle = document.createElement('style');
-brandStyle.textContent = `
-  .brand{
-    display:inline-block!important;
-    width:220px;
-    height:58px;
-    flex:0 0 auto;
-    background:url('assets/mbdevs-logo.webp') center/contain no-repeat!important;
-    transform-style:preserve-3d;
-    transform:perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0);
-    transition:transform .22s ease, filter .22s ease;
-    will-change:transform;
-    filter:drop-shadow(0 8px 14px rgba(0,0,0,.30));
-  }
-  .brand .brand-mark,.brand .brand-name{display:none!important}
-  .brand:hover{
-    filter:drop-shadow(0 14px 20px rgba(0,0,0,.42)) drop-shadow(0 0 12px rgba(35,235,180,.12));
-  }
-  footer .brand{width:190px;height:52px}
-  @media(max-width:640px){.brand{width:158px;height:46px}footer .brand{width:165px;height:48px}}
-  @media(prefers-reduced-motion:reduce){.brand{transition:none!important;transform:none!important}}
-`;
-document.head.appendChild(brandStyle);
-
+// 3D effect only: the logo image itself is rendered directly in HTML.
 document.querySelectorAll('.brand').forEach(brand => {
+  const logo = brand.querySelector('.brand-logo');
+  if (!logo) return;
+
   brand.addEventListener('mousemove', e => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const r = brand.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
-    const rotateY = x * 18;
-    const rotateX = y * -14;
-    brand.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px) scale(1.035)`;
+    logo.style.transform = `perspective(900px) rotateX(${y * -14}deg) rotateY(${x * 18}deg) translateZ(12px) scale(1.035)`;
   });
+
   brand.addEventListener('mouseleave', () => {
-    brand.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)';
+    logo.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0) scale(1)';
   });
 });
